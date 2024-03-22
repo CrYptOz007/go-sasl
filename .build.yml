@@ -5,7 +5,7 @@ packages:
   - bash
   - findutils
 sources:
-  - https://github.com/emersion/go-sasl
+  - https://github.com/CrYptOz007/go-sasl
 tasks:
   - build: |
       cd go-sasl

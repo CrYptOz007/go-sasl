@@ -5,7 +5,7 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/emersion/go-sasl"
+	"github.com/CrYptOz007/go-sasl"
 )
 
 func TestNewPlainClient(t *testing.T) {

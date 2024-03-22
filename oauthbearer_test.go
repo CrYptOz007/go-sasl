@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/emersion/go-sasl"
+	"github.com/CrYptOz007/go-sasl"
 )
 
 func TestNewOAuthBearerClientNoHostOrPort(t *testing.T) {
