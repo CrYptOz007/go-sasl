@@ -2,6 +2,7 @@ package sasl
 
 import (
 	"fmt"
+    "github.com/emersion/go-sasl"
 )
 
 // The XOAUTH2 mechanism name.
@@ -22,10 +23,10 @@ func (x *xoauth2Client) Start() (mech string, ir []byte, err error) {
 }
 
 func (x *xoauth2Client) Next(challenge []byte) (response []byte, err error) {
-    return nil, ErrUnexpectedServerChallenge
+    return nil, sasl.ErrUnexpectedServerChallenge
 }
 
-func NewXOAUTH2Client(username, token string) Client {
+func NewXOAUTH2Client(username, token string) sasl.Client {
     return &xoauth2Client{
         XOAUTH2Options: XOAUTH2Options{
             Username: username,
@@ -62,7 +63,7 @@ func (a *xoauth2Server) Next(response []byte) (challenge []byte, done bool, err 
     return nil, true, nil
 }
 
-func NewXOAUTH2Server(authenticator XOAUTH2Authenticator) Server {
+func NewXOAUTH2Server(authenticator XOAUTH2Authenticator) sasl.Server {
     return &xoauth2Server{
         authenticate: authenticator,
     }
